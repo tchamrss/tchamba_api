@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-mnqzx5ijk##i0(#$01cjzqwamsedh-ofep$jlu-%$^ik73om$^
 DEBUG = True
 
 ALLOWED_HOSTS = ['tchamba.pythonanywhere.com',
-                 'localhost'
+                 'localhost',
+                 '127.0.0.1'
                  ]
 
 
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'todo',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +133,7 @@ MEDIA_ROOT = '/home/tchamba/todolist_api/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/tchamba/todolist_api/static'
 STATIC_URL = '/static/'
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
